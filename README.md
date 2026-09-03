@@ -1,4 +1,4 @@
-# 🍽️ Food Choices & Location-Based Lifestyle Recommendation
+# Food Choices & Location-Based Lifestyle Recommendation
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 - [Executive Summary](#-executive-summary)
 - [Project Architecture & Workflow](#-project-architecture--workflow)
 - [Dataset & Feature Engineering](#-dataset--feature-engineering)
@@ -25,7 +25,7 @@
 
 ---
 
-## 📖 Executive Summary
+## Executive Summary
 University students have diverse academic commitments, disposable incomes, fitness routines, and nutritional habits. Finding ideal housing requires balancing personal priorities (home cooking vs. dining out, gym access, proximity to green parks) against neighborhood amenity availability.
 
 This project implements an unsupervised machine learning pipeline using **K-Means Clustering** to:
@@ -35,7 +35,7 @@ This project implements an unsupervised machine learning pipeline using **K-Mean
 
 ---
 
-## 🔄 Project Architecture & Workflow
+## Project Architecture & Workflow
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -99,7 +99,7 @@ This project implements an unsupervised machine learning pipeline using **K-Mean
 
 ---
 
-## 📊 Dataset & Feature Engineering
+## Dataset & Feature Engineering
 
 ### Selected Features
 | Feature | Category | Scale / Units | Description |
@@ -117,7 +117,7 @@ This project implements an unsupervised machine learning pipeline using **K-Mean
 
 ---
 
-## 🤖 Methodology & Machine Learning
+## Methodology & Machine Learning
 
 ### Part 1: Population Behavioral Clustering
 - **Feature Standardization:** Normalized using `StandardScaler` to balance multi-scale attributes.
@@ -145,7 +145,7 @@ This project implements an unsupervised machine learning pipeline using **K-Mean
 
 ---
 
-## 🗺️ Interactive Geospatial Visualization
+## Interactive Geospatial Visualization
 The project exports a fully interactive **Folium map** featuring:
 - Custom color markers representing neighborhood clusters.
 - Rich HTML popups with building names and itemized amenity breakdowns.
@@ -155,7 +155,7 @@ The map is saved at [`outputs/maps/clustered_locations_map.html`](outputs/maps/c
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 gelocation_data_notebook/
 ├── Geolocational_data.ipynb         # Main portfolio-ready Jupyter Notebook
@@ -171,7 +171,7 @@ gelocation_data_notebook/
 
 ---
 
-## 🚀 Getting Started & Usage
+## Getting Started & Usage
 
 ### 1. Clone the Repository
 ```bash
@@ -196,5 +196,5 @@ export FOURSQUARE_API_KEY="your_api_key_here"
 
 ---
 
-## 👤 Author
-- **Manu Palash** - Data Science & Machine Learning Portfolio
+## Author
+- **Manu Palash**
