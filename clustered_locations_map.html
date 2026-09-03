@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_baf2855a664cb6e90e00aa73b3390b70 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 40px; 
+    left: 40px; 
+    width: 290px; 
+    background-color: white; 
+    border: 2px solid #bdc3c7; 
+    border-radius: 8px;
+    z-index: 9999; 
+    font-size: 13px; 
+    font-family: Arial, sans-serif;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+">
+    <b style="font-size: 14px; color: #2c3e50;">Neighborhood Clusters</b><hr style="margin: 6px 0;">
+    <div style="margin-bottom: 4px;"><span style="color:#E41A1C; font-size:16px;">●</span> <b>Cluster 0:</b> Amenity-Rich & Fitness Hub</div>
+    <div style="margin-bottom: 4px;"><span style="color:#377EB8; font-size:16px;">●</span> <b>Cluster 1:</b> Quiet & Park Enclave</div>
+    <div style="margin-bottom: 4px;"><span style="color:#4DAF4A; font-size:16px;">●</span> <b>Cluster 2:</b> Dining & Cafe Corridor</div>
+</div>
+    
+            <div class="folium-map" id="map_baf2855a664cb6e90e00aa73b3390b70" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_baf2855a664cb6e90e00aa73b3390b70 = L.map(
+                "map_baf2855a664cb6e90e00aa73b3390b70",
+                {
+                    center: [13.133521, 77.567135],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_943a63b33eddbded2012f6537874cdb5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_943a63b33eddbded2012f6537874cdb5.addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+            var circle_marker_b2cac77555d5deb190469a948eed3cfd = L.circleMarker(
+                [13.13456280998398, 77.57264643045936],
+                {"bubblingMouseEvents": true, "color": "#E41A1C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E41A1C", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_5c8383acb18670b6faac7e5628df25fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4452a6bad3b8cf14392311076130302a = $(`<div id="html_4452a6bad3b8cf14392311076130302a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">Shriram Suhaana Apartments</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #E41A1C; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 0: Amenity-Rich & Fitness Hub</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">6</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">2</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">1</td></tr>         </table>     </div>     </div>`)[0];
+                popup_5c8383acb18670b6faac7e5628df25fa.setContent(html_4452a6bad3b8cf14392311076130302a);
+            
+        
+
+        circle_marker_b2cac77555d5deb190469a948eed3cfd.bindPopup(popup_5c8383acb18670b6faac7e5628df25fa)
+        ;
+
+        
+    
+    
+            circle_marker_b2cac77555d5deb190469a948eed3cfd.bindTooltip(
+                `<div>
+                     Shriram Suhaana Apartments (Cluster 0: Amenity-Rich & Fitness Hub)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac049aee0d5bfd6a27bda33ee1c4815e = L.circleMarker(
+                [13.114882023314768, 77.56309032440184],
+                {"bubblingMouseEvents": true, "color": "#4DAF4A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4DAF4A", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_f226e472f4c62bb87fbe2775ed0cbcd2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c30d67137b2c84cfa7a5f8ba84a0aa70 = $(`<div id="html_c30d67137b2c84cfa7a5f8ba84a0aa70" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">GK Lakeview Apartment</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #4DAF4A; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 2: Dining & Cafe Urban Corridor</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">5</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">0</td></tr>         </table>     </div>     </div>`)[0];
+                popup_f226e472f4c62bb87fbe2775ed0cbcd2.setContent(html_c30d67137b2c84cfa7a5f8ba84a0aa70);
+            
+        
+
+        circle_marker_ac049aee0d5bfd6a27bda33ee1c4815e.bindPopup(popup_f226e472f4c62bb87fbe2775ed0cbcd2)
+        ;
+
+        
+    
+    
+            circle_marker_ac049aee0d5bfd6a27bda33ee1c4815e.bindTooltip(
+                `<div>
+                     GK Lakeview Apartment (Cluster 2: Dining & Cafe Urban Corridor)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8762be25c6438df865001b3c8aa3d435 = L.circleMarker(
+                [13.139040428122907, 77.56713338111022],
+                {"bubblingMouseEvents": true, "color": "#377EB8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377EB8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_ea3ec929f6f4641009faa0ee8f64d06e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8dbd6451f7ce2f3f628d8f59e4e47542 = $(`<div id="html_8dbd6451f7ce2f3f628d8f59e4e47542" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">bmsit boys hostel</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #377EB8; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 1: Quiet & Park-Oriented Enclave</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">1</td></tr>         </table>     </div>     </div>`)[0];
+                popup_ea3ec929f6f4641009faa0ee8f64d06e.setContent(html_8dbd6451f7ce2f3f628d8f59e4e47542);
+            
+        
+
+        circle_marker_8762be25c6438df865001b3c8aa3d435.bindPopup(popup_ea3ec929f6f4641009faa0ee8f64d06e)
+        ;
+
+        
+    
+    
+            circle_marker_8762be25c6438df865001b3c8aa3d435.bindTooltip(
+                `<div>
+                     bmsit boys hostel (Cluster 1: Quiet & Park-Oriented Enclave)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2df5f819926f824514544d1daff8afb = L.circleMarker(
+                [13.130488166932851, 77.57282553009868],
+                {"bubblingMouseEvents": true, "color": "#E41A1C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E41A1C", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_d46eb91ed469e77aa49e43c45a3445e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_471cdbe880a553af6aa6c414eaaf7cbc = $(`<div id="html_471cdbe880a553af6aa6c414eaaf7cbc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">shobha azalia</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #E41A1C; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 0: Amenity-Rich & Fitness Hub</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">6</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">2</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">0</td></tr>         </table>     </div>     </div>`)[0];
+                popup_d46eb91ed469e77aa49e43c45a3445e8.setContent(html_471cdbe880a553af6aa6c414eaaf7cbc);
+            
+        
+
+        circle_marker_c2df5f819926f824514544d1daff8afb.bindPopup(popup_d46eb91ed469e77aa49e43c45a3445e8)
+        ;
+
+        
+    
+    
+            circle_marker_c2df5f819926f824514544d1daff8afb.bindTooltip(
+                `<div>
+                     shobha azalia (Cluster 0: Amenity-Rich & Fitness Hub)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68f9fd5d7dd084dcdca071d8a2f148cd = L.circleMarker(
+                [13.138822, 77.571338],
+                {"bubblingMouseEvents": true, "color": "#377EB8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377EB8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_289b09265d2b3a67f8725ddd3d800968 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e943315820efdc0a84f7c39ff1a6f15 = $(`<div id="html_8e943315820efdc0a84f7c39ff1a6f15" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">Prestige Royal Garden</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #377EB8; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 1: Quiet & Park-Oriented Enclave</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">2</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">2</td></tr>         </table>     </div>     </div>`)[0];
+                popup_289b09265d2b3a67f8725ddd3d800968.setContent(html_8e943315820efdc0a84f7c39ff1a6f15);
+            
+        
+
+        circle_marker_68f9fd5d7dd084dcdca071d8a2f148cd.bindPopup(popup_289b09265d2b3a67f8725ddd3d800968)
+        ;
+
+        
+    
+    
+            circle_marker_68f9fd5d7dd084dcdca071d8a2f148cd.bindTooltip(
+                `<div>
+                     Prestige Royal Garden (Cluster 1: Quiet & Park-Oriented Enclave)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1597d37783037973a38d49dcc80e46b3 = L.circleMarker(
+                [13.12844, 77.56176],
+                {"bubblingMouseEvents": true, "color": "#377EB8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377EB8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_5ffdad1b4d7e983485426ab54ae6b8b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ece23cca30583b46ea456abb1810c084 = $(`<div id="html_ece23cca30583b46ea456abb1810c084" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">Prestige Garden Bay</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #377EB8; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 1: Quiet & Park-Oriented Enclave</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">1</td></tr>         </table>     </div>     </div>`)[0];
+                popup_5ffdad1b4d7e983485426ab54ae6b8b6.setContent(html_ece23cca30583b46ea456abb1810c084);
+            
+        
+
+        circle_marker_1597d37783037973a38d49dcc80e46b3.bindPopup(popup_5ffdad1b4d7e983485426ab54ae6b8b6)
+        ;
+
+        
+    
+    
+            circle_marker_1597d37783037973a38d49dcc80e46b3.bindTooltip(
+                `<div>
+                     Prestige Garden Bay (Cluster 1: Quiet & Park-Oriented Enclave)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2be97de4b988ca0370fc3dc7520d1bf = L.circleMarker(
+                [13.12989, 77.577765],
+                {"bubblingMouseEvents": true, "color": "#377EB8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377EB8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_3759779fa3588a90921b13cee79f2388 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b028ca30e87916359a334b6c9f5e8f28 = $(`<div id="html_b028ca30e87916359a334b6c9f5e8f28" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">sobha Althea</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #377EB8; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 1: Quiet & Park-Oriented Enclave</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">0</td></tr>         </table>     </div>     </div>`)[0];
+                popup_3759779fa3588a90921b13cee79f2388.setContent(html_b028ca30e87916359a334b6c9f5e8f28);
+            
+        
+
+        circle_marker_e2be97de4b988ca0370fc3dc7520d1bf.bindPopup(popup_3759779fa3588a90921b13cee79f2388)
+        ;
+
+        
+    
+    
+            circle_marker_e2be97de4b988ca0370fc3dc7520d1bf.bindTooltip(
+                `<div>
+                     sobha Althea (Cluster 1: Quiet & Park-Oriented Enclave)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_927a48d7e6b6fd1d47679c787e66ec27 = L.circleMarker(
+                [13.119226156941917, 77.57954715850104],
+                {"bubblingMouseEvents": true, "color": "#377EB8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377EB8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_647e7edf2ea7e0b0a3f5fa0f1bf24628 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d780047bca1278c7f96ba29f9dad0a2c = $(`<div id="html_d780047bca1278c7f96ba29f9dad0a2c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">Unitech Heritage Estates</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #377EB8; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 1: Quiet & Park-Oriented Enclave</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">2</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">1</td></tr>         </table>     </div>     </div>`)[0];
+                popup_647e7edf2ea7e0b0a3f5fa0f1bf24628.setContent(html_d780047bca1278c7f96ba29f9dad0a2c);
+            
+        
+
+        circle_marker_927a48d7e6b6fd1d47679c787e66ec27.bindPopup(popup_647e7edf2ea7e0b0a3f5fa0f1bf24628)
+        ;
+
+        
+    
+    
+            circle_marker_927a48d7e6b6fd1d47679c787e66ec27.bindTooltip(
+                `<div>
+                     Unitech Heritage Estates (Cluster 1: Quiet & Park-Oriented Enclave)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f32f7036cb53606199d312a13349c84 = L.circleMarker(
+                [13.117278270200178, 77.57737873793441],
+                {"bubblingMouseEvents": true, "color": "#4DAF4A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4DAF4A", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_1c4432e45987979225d0adca03aa1113 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac9a48f57b9caa4de73c97a6f4ba2345 = $(`<div id="html_ac9a48f57b9caa4de73c97a6f4ba2345" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">NCC Urban - Nagarjuna Meadows</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #4DAF4A; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 2: Dining & Cafe Urban Corridor</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">5</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">0</td></tr>         </table>     </div>     </div>`)[0];
+                popup_1c4432e45987979225d0adca03aa1113.setContent(html_ac9a48f57b9caa4de73c97a6f4ba2345);
+            
+        
+
+        circle_marker_9f32f7036cb53606199d312a13349c84.bindPopup(popup_1c4432e45987979225d0adca03aa1113)
+        ;
+
+        
+    
+    
+            circle_marker_9f32f7036cb53606199d312a13349c84.bindTooltip(
+                `<div>
+                     NCC Urban - Nagarjuna Meadows (Cluster 2: Dining & Cafe Urban Corridor)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aec2d5298f11bdf76777440cbd580444 = L.circleMarker(
+                [13.117105478254288, 77.57757507601625],
+                {"bubblingMouseEvents": true, "color": "#4DAF4A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4DAF4A", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+    
+        var popup_69975697782050fa7714407a08097aaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32173385f916df169ce642e296d21259 = $(`<div id="html_32173385f916df169ce642e296d21259" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 200px; padding: 4px;">         <h4 style="margin: 0 0 6px 0; color: #2c3e50;">PRANATHI @ Nagarjuna Meadows</h4>         <div style="background-color: #f8f9fa; border-left: 3px solid #4DAF4A; padding: 4px 8px; margin-bottom: 8px;">             <b>Cluster 2: Dining & Cafe Urban Corridor</b>         </div>         <table style="width: 100%; font-size: 12px; border-collapse: collapse;">             <tr><td>🍽️ Restaurants:</td><td style="text-align: right; font-weight: bold;">5</td></tr>             <tr><td>🛒 Grocery Stores:</td><td style="text-align: right; font-weight: bold;">0</td></tr>             <tr><td>🏋️ Gyms:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>☕ Cafes:</td><td style="text-align: right; font-weight: bold;">1</td></tr>             <tr><td>🌳 Parks:</td><td style="text-align: right; font-weight: bold;">0</td></tr>         </table>     </div>     </div>`)[0];
+                popup_69975697782050fa7714407a08097aaf.setContent(html_32173385f916df169ce642e296d21259);
+            
+        
+
+        circle_marker_aec2d5298f11bdf76777440cbd580444.bindPopup(popup_69975697782050fa7714407a08097aaf)
+        ;
+
+        
+    
+    
+            circle_marker_aec2d5298f11bdf76777440cbd580444.bindTooltip(
+                `<div>
+                     PRANATHI @ Nagarjuna Meadows (Cluster 2: Dining & Cafe Urban Corridor)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_943a63b33eddbded2012f6537874cdb5.addTo(map_baf2855a664cb6e90e00aa73b3390b70);
+        
+</script>
+</html>
